@@ -1,5 +1,8 @@
 {% set title = "Database Replace"|t('database-replace') %}
 
-{% block content %}
-    <p>Tools to upload and replace a database from the Craft CMS 3 control panel utilities</p>
-{% endblock %}
+{% import "_includes/forms" as forms %}
+
+    <p>
+        Upload a compatible, plaintext database <code>.sql</code> file to replace your current database ({{ dbDriver }}):<br>
+        <span class="warning"><i>This will cause the site to be inaccessible while the process completes.</i></span>
+    </p>

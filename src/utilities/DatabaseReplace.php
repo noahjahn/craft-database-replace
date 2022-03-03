@@ -2,6 +2,7 @@
 namespace noahjahn\databasereplace\utilities;
 
 use Craft;
+use noahjahn\databasereplace\helpers\Db;
 
 class DatabaseReplace extends \craft\base\Utility
 {
@@ -36,6 +37,13 @@ class DatabaseReplace extends \craft\base\Utility
     {
         $view = Craft::$app->getView();
 
-        return $view->renderTemplate('noahjahn/databasereplace/DatabaseReplace');
+        return $view->renderTemplate('noahjahn/databasereplace/DatabaseReplace', [
+            'dbDriver' => self::_dbDriver(),
+        ]);
+    }
+
+    private static function _dbDriver(): string
+    {
+        return Db::getDriverName() . ' ' . Db::getDriverVersion();
     }
 }
