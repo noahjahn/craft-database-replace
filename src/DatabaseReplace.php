@@ -9,7 +9,7 @@ use yii\base\Event;
 use noahjahn\databasereplace\utilities\DatabaseReplace;
 use noahjahn\databasereplace\services\Path;
 
-class Plugin extends \craft\base\Plugin
+class DatabaseReplace extends \craft\base\Plugin
 {
     public $packageName = 'Database Replace';
 
