@@ -14,6 +14,9 @@ class Plugin extends \craft\base\Plugin
     {
         parent::init();
 
+        $this->registerDatabaseReplaceUtility();
+    }
+    private function registerDatabaseReplaceUtility() {
         Event::on(
             Utilities::class,
             Utilities::EVENT_REGISTER_UTILITY_TYPES,
