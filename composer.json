@@ -1,0 +1,31 @@
+{
+    "name": "noahjahn/craft-database-replace",
+    "description": "Tools to upload and replace a database from the Craft CMS 3 control panel",
+    "type": "craft-plugin",
+    "keywords": ["database", "replace", "control", "panel", "craft"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Noah Jahn",
+            "homepage": "https://noahjahn.dev"
+        }
+    ],
+    "support": {
+        "email": "najahn19@gmail.com",
+        "issues": "https://github.com/noahjahn/repo/issues?state=open",
+        "source": "https://github.com/noahjahn/repo",
+        "docs": "https://github.com/noahjahn/repo/blob/main/README.md"
+    },
+    "require": {
+        "craftcms/cms": "^3.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "noahjahn\\craftdatabasereplace\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Database Replace",
+        "handle": "database-replace"
+    }
+}
