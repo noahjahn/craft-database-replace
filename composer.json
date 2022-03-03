@@ -1,6 +1,6 @@
 {
     "name": "noahjahn/craft-database-replace",
-    "description": "Tools to upload and replace a database from the Craft CMS 3 control panel",
+    "description": "Tools to upload and replace a database from the Craft CMS 3 control panel utilities",
     "type": "craft-plugin",
     "keywords": ["database", "replace", "control", "panel", "craft"],
     "license": "MIT",
