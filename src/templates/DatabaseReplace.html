@@ -2,7 +2,32 @@
 
 {% import "_includes/forms" as forms %}
 
+{% do view.registerAssetBundle("craft\\web\\assets\\fileupload\\FileUploadAsset") %}
+
+<form method="post" action="" accept-charset="UTF-8">
     <p>
         Upload a compatible, plaintext database <code>.sql</code> file to replace your current database ({{ dbDriver }}):<br>
         <span class="warning"><i>This will cause the site to be inaccessible while the process completes.</i></span>
     </p>
+
+    {{ actionInput('database-replace/database-replace/replace') }}
+    {{ csrfInput() }}
+
+    {{ forms.checkbox({
+        name: 'downloadBackup',
+        id: 'download-backup',
+        label: 'Download backup before replacing'|t('database-replace'),
+        checked: true,
+    }) }}
+    <br><br>
+    {{ tag('button', {
+        type: 'button',
+        class: ['btn', 'formsubmit', 'submit'],
+        text: 'Upload database file'|t('database-replace'),
+        data: {
+            confirm: 'Are you sure you want to replace the current database with uploaded one?'|t('database-replace'),
+            destructive: true,
+        },
+    }) }}
+</form>
+
