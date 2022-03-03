@@ -28,6 +28,29 @@ class Db
         return App::normalizeVersion($db->getSchema()->getServerVersion());
     }
 
+    public static function backup($download = true)
+    {
+        try {
+            $backupPath = self::_getDb()->backup();
+        } catch (\Throwable $e) {
+            throw new Exception('Could not create backup: ' . $e->getMessage());
+        }
+
+        if (!is_file($backupPath)) {
+            throw new Exception("Could not create backup: the backup file doesn't exist.");
+        }
+
+        // Zip it up and delete the SQL file
+        $zipPath = FileHelper::zip($backupPath);
+        unlink($backupPath);
+
+        if (!$download) {
+            return true;
+        }
+
+        return $zipPath;
+    }
+
     private static function _getDb(): DbConnection
     {
         return Craft::$app->getDb();
