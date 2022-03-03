@@ -7,7 +7,7 @@ use craft\events\RegisterTemplateRootsEvent;
 use craft\services\Utilities;
 use craft\web\View;
 use yii\base\Event;
-use noahjahn\databasereplace\utilities\DatabaseReplace;
+use noahjahn\databasereplace\utilities\DatabaseReplace as DatabaseReplaceUtil;
 use noahjahn\databasereplace\services\Path;
 
 class DatabaseReplace extends Plugin
@@ -32,7 +32,7 @@ class DatabaseReplace extends Plugin
             Utilities::class,
             Utilities::EVENT_REGISTER_UTILITY_TYPES,
             function(RegisterComponentTypesEvent $event) {
-                $event->types[] = DatabaseReplace::class;
+                $event->types[] = DatabaseReplaceUtil::class;
             }
         );
     }
