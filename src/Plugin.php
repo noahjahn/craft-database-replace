@@ -1,9 +1,10 @@
 <?php
-namespace noahjahn\craftdatabasereplace;
+namespace noahjahn\databasereplace;
 
 use craft\events\RegisterComponentTypesEvent;
 use craft\services\Utilities;
 use yii\base\Event;
+use noahjahn\databasereplace\utilities\DatabaseReplace;
 use noahjahn\craftdatabasereplace\utilities\DatabaseReplace;
 
 class Plugin extends \craft\base\Plugin
