@@ -1,6 +1,7 @@
 <?php
 namespace noahjahn\databasereplace;
 
+use craft\base\Plugin;
 use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\services\Utilities;
@@ -9,7 +10,7 @@ use yii\base\Event;
 use noahjahn\databasereplace\utilities\DatabaseReplace;
 use noahjahn\databasereplace\services\Path;
 
-class DatabaseReplace extends \craft\base\Plugin
+class DatabaseReplace extends Plugin
 {
     public $packageName = 'Database Replace';
 
