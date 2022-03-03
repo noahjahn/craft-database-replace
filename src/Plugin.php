@@ -5,7 +5,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Utilities;
 use yii\base\Event;
 use noahjahn\databasereplace\utilities\DatabaseReplace;
-use noahjahn\craftdatabasereplace\utilities\DatabaseReplace;
+use noahjahn\databasereplace\services\Path;
 
 class Plugin extends \craft\base\Plugin
 {
@@ -15,8 +15,14 @@ class Plugin extends \craft\base\Plugin
     {
         parent::init();
 
+        $this->createDatabaseUploadPath();
         $this->registerDatabaseReplaceUtility();
     }
+
+    private function createDatabaseUploadPath() {
+        Path::getDatabaseUploadPath(true);
+    }
+
     private function registerDatabaseReplaceUtility() {
         Event::on(
             Utilities::class,
