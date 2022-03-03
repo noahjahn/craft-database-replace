@@ -26,6 +26,7 @@
     },
     "extra": {
         "name": "Database Replace",
-        "handle": "database-replace"
+        "handle": "database-replace",
+        "class": "noahjahn\\databasereplace\\DatabaseReplace"
     }
 }
