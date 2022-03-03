@@ -16,10 +16,13 @@ This plugin is a work in progress.
 ## Ideas
 
 * Upload a database sql file in the Craft CP utilities section to replace the current database
-* Prompt the user to double check they know what they're doing
-* Create a back up before replacing -- ask the user if they would like to download the copy as well
+* <s>Prompt the user to double check they know what they're doing</s>
+* <s>Create a back up before replacing -- ask the user if they would like to download the copy as well</s>
+* Delete the uploaded sql file after import is complete
 * Create a permission in settings for seeing/using this utility
 * Allow the upload path to be configurable in the Craft CP settings
+* Check to make sure the storage folder created is writable...?
+* Replace the front-end with a temporarily down static html file?
 
 ### Future
 
